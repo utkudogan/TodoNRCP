@@ -11,7 +11,8 @@ import org.openide.awt.ActionReference;
 import org.openide.awt.ActionReferences;
 import org.openide.awt.ActionRegistration;
 import org.openide.util.NbBundle.Messages;
-import org.openide.util.RequestProcessor.Task;
+import todo.model.Task;
+import todo.view.TaskDetailsDialog;
 
 @ActionID(
         category = "Edit",
@@ -37,6 +38,9 @@ public final class EditTaskAction implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ev) {
-        // TODO use context
-    }
+        TaskDetailsDialog taskDetailsDialog = new TaskDetailsDialog(null, true);
+        taskDetailsDialog.setNewTask(false);
+        taskDetailsDialog.setTask(context);
+//        taskDetailsDialog.addActionListener(this);
+        taskDetailsDialog.setVisible(true);    }
 }

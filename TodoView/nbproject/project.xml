@@ -104,7 +104,9 @@
                     </run-dependency>
                 </dependency>
             </module-dependencies>
-            <public-packages/>
+            <public-packages>
+                <package>todo.view</package>
+            </public-packages>
         </data>
     </configuration>
 </project>

@@ -11,7 +11,10 @@ import org.netbeans.swing.etable.ETableColumnModel;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.explorer.ExplorerManager;
+import org.openide.explorer.ExplorerUtils;
 import org.openide.explorer.view.OutlineView;
+import org.openide.nodes.AbstractNode;
+import org.openide.nodes.Children;
 import org.openide.windows.TopComponent;
 import org.openide.util.NbBundle.Messages;
 
@@ -39,7 +42,7 @@ import org.openide.util.NbBundle.Messages;
     "CTL_TasksTopComponent=Tasks Window",
     "HINT_TasksTopComponent=This is a Tasks window"
 })
-public final class TasksTopComponent extends TopComponent {
+public final class TasksTopComponent extends TopComponent implements ExplorerManager.Provider{
 
     private final ExplorerManager em = new ExplorerManager();
     private final OutlineView ovTasks;
@@ -65,6 +68,8 @@ public final class TasksTopComponent extends TopComponent {
         TableColumnModel columnModel = ovTasks.getOutline().getColumnModel();
         ETableColumn column = (ETableColumn) columnModel.getColumn(0);
         ((ETableColumnModel) columnModel).setColumnHidden(column, true);
+        em.setRootContext(new AbstractNode(Children.create(new TaskChildFactory(), true))); // asynchronously
+        associateLookup(ExplorerUtils.createLookup(em, getActionMap()));
     }
 
     /**
@@ -104,5 +109,10 @@ public final class TasksTopComponent extends TopComponent {
     void readProperties(java.util.Properties p) {
         String version = p.getProperty("version");
         // TODO read your settings according to their version
+    }
+
+    @Override
+    public ExplorerManager getExplorerManager() {
+        return em;
     }
 }
