@@ -39,4 +39,34 @@
         <file name="View_hidden"/>
         <file name="Window_hidden"/>
     </folder>
+    <folder name="Toolbars">
+        <file name="Clipboard_hidden"/>
+        <folder name="Options">
+            <attr name="SystemFileSystem.localizingBundle" stringvalue="org.netbeans.core.ui.resources.Bundle"/>
+            <attr name="position" intvalue="100"/>
+            <file name="org-openide-actions-SaveAllAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/System/org-openide-actions-SaveAllAction.instance"/>
+                <attr name="position" intvalue="400"/>
+            </file>
+        </folder>
+        <file name="File_hidden"/>
+        <file name="Memory_hidden"/>
+        <folder name="Edit">
+            <attr name="SystemFileSystem.localizingBundle" stringvalue="org.netbeans.core.ui.resources.Bundle"/>
+            <attr name="position" intvalue="200"/>
+            <file name="org-openide-actions-CopyAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Edit/org-openide-actions-CopyAction.instance"/>
+                <attr name="position" intvalue="200"/>
+            </file>
+            <file name="org-openide-actions-CutAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Edit/org-openide-actions-CutAction.instance"/>
+                <attr name="position" intvalue="100"/>
+            </file>
+            <file name="org-openide-actions-PasteAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Edit/org-openide-actions-PasteAction.instance"/>
+                <attr name="position" intvalue="300"/>
+            </file>
+        </folder>
+        <file name="UndoRedo_hidden"/>
+    </folder>
 </filesystem>

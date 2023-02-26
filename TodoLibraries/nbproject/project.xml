@@ -6,7 +6,10 @@
             <code-name-base>todo.libraries</code-name-base>
             <suite-component/>
             <module-dependencies/>
-            <public-packages/>
+            <public-packages>
+                <package>org.hsqldb</package>
+                <package>org.jdesktop.swingx</package>
+            </public-packages>
             <class-path-extension>
                 <runtime-relative-path>ext/swingx-all-1.6.5-1.jar</runtime-relative-path>
                 <binary-origin>release/modules/ext/swingx-all-1.6.5-1.jar</binary-origin>

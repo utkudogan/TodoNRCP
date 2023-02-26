@@ -27,3 +27,5 @@ hs_err_pid*
 /TodoModel/nbproject/private/
 /TodoView/build/
 /TodoController/build/
+/TodoView/nbproject/private/
+/TodoController/nbproject/private/
